@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merger | Student Toolkit</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="tool-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">&larr; Back to All Tools</a>
+            <h1>PDF Merger</h1>
+            <p class="subtitle">Combine multiple PDF files into one. Drag files to reorder them.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-container">
+            <!-- Step 1: File Input -->
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-prompt">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    <p>Drag & drop PDF files here</p>
+                    <p class="small-text">or</p>
+                    <button id="browse-btn" class="button-secondary">Browse Files</button>
+                </div>
+                <input type="file" id="file-input" multiple accept="application/pdf" hidden>
+            </div>
+
+            <!-- Step 2: File List and Ordering -->
+            <div id="file-list-container" class="file-list-container" hidden>
+                <h3>Your Files (Drag to reorder)</h3>
+                <ul id="file-list"></ul>
+            </div>
+
+            <!-- Step 3: Action Button -->
+            <div class="action-container">
+                <button id="merge-btn" class="button-primary" disabled>Merge PDFs</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Student Toolkit. All tools run in your browser for privacy and speed.</p>
+    </footer>
+
+    <!-- PDF-lib library -->
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+    <!-- Tool-specific script -->
+    <script src="../scripts/pdf-merger.js"></script>
+</body>
+</html>
+

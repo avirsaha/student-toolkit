@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Splitter | Student Toolkit</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="tool-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">&larr; Back to All Tools</a>
+            <h1>PDF Splitter</h1>
+            <p class="subtitle">Extract pages or split a PDF into multiple files.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-container">
+            <!-- Step 1: File Input -->
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-prompt">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    <p>Drag & drop a single PDF file here</p>
+                    <p class="small-text">or</p>
+                    <button id="browse-btn" class="button-secondary">Browse File</button>
+                </div>
+                <input type="file" id="file-input" accept="application/pdf" hidden>
+            </div>
+
+            <!-- Step 2: Splitting Options -->
+            <div id="split-options" class="split-options-container" hidden>
+                <div id="file-info-display" class="file-info"></div>
+                
+                 <div class="split-mode-selector">
+                    <div class="mode-option">
+                        <input type="radio" id="mode-extract" name="split-mode" value="extract" checked>
+                        <label for="mode-extract">Extract Pages</label>
+                    </div>
+                    <div class="mode-option">
+                        <input type="radio" id="mode-split-all" name="split-mode" value="split-all">
+                        <label for="mode-split-all">Split Every Page</label>
+                    </div>
+                </div>
+
+                <div id="extract-options">
+                    <label for="page-ranges">Enter pages or ranges to extract:</label>
+                    <input type="text" id="page-ranges" class="text-input" placeholder="e.g., 1-5, 8, 10-12">
+                </div>
+            </div>
+            
+            <!-- Step 3: Preview -->
+            <div id="preview-container" class="preview-container" hidden>
+                <h3>Document Preview</h3>
+                <div id="preview-loader" class="loader"></div>
+                <div id="preview-pages"></div>
+            </div>
+
+            <!-- Error Message -->
+            <p id="error-message" class="error-message" hidden></p>
+
+            <!-- Step 4: Action Button -->
+            <div class="action-container">
+                <button id="split-btn" class="button-primary" disabled>Split PDF</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Student Toolkit. All tools run in your browser for privacy and speed.</p>
+    </footer>
+
+    <!-- Required Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip/dist/jszip.min.js"></script>
+    <!-- pdf.js for rendering previews (FIXED CDN LINK) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    
+    <!-- Tool-specific script -->
+    <script src="../scripts/pdf-splitter.js"></script>
+</body>
+</html>
+
+

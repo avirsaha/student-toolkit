@@ -274,3 +274,310 @@ footer {
         font-size: 2.5rem;
     }
 }
+/* --- Tool Page Specific Styles --- */
+.tool-header {
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--secondary-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--accent-color);
+}
+
+.tool-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.drop-zone {
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.drop-zone.drag-over {
+    border-color: var(--accent-color);
+    background-color: rgba(74, 144, 226, 0.1);
+}
+
+.drop-zone-prompt svg {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.drop-zone-prompt p {
+    font-size: 1.1rem;
+    color: var(--primary-text);
+}
+
+.drop-zone-prompt .small-text {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin: 0.5rem 0;
+}
+
+.button-secondary {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--primary-text);
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    margin-top: 1rem;
+}
+
+.button-secondary:hover {
+    background-color: var(--border-color);
+    border-color: var(--accent-color);
+}
+
+.file-list-container {
+    margin-top: 2rem;
+}
+
+.file-list-container h3 {
+    margin-bottom: 1rem;
+}
+
+#file-list {
+    list-style: none;
+    padding: 0;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    cursor: grab;
+}
+
+.file-item.dragging {
+    opacity: 0.5;
+}
+
+.file-name {
+    flex-grow: 1;
+    margin: 0 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drag-handle, .remove-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--secondary-text);
+    padding: 0.25rem;
+}
+
+.drag-handle {
+    cursor: grab;
+}
+
+.remove-btn:hover {
+    color: #E57373; /* A soft red for removal */
+}
+
+.action-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.button-primary {
+    padding: 1rem 2rem;
+    border: none;
+    background-color: var(--accent-color);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button-primary:hover:not(:disabled) {
+    background-color: #3a7ac8;
+}
+
+.button-primary:disabled {
+    background-color: #444;
+    color: var(--secondary-text);
+    cursor: not-allowed;
+}
+.button-primary:disabled {
+    background-color: #444;
+    color: var(--secondary-text);
+    cursor: not-allowed;
+}
+
+/* --- PDF Splitter Page Styles (REVISED) --- */
+.split-options-container {
+    padding: 1.5rem;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.file-info {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.file-info span {
+    font-weight: 500;
+    color: var(--secondary-text);
+}
+
+.split-mode-selector {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 0.25rem;
+    border: 1px solid var(--border-color);
+}
+
+.mode-option {
+    flex: 1;
+}
+
+.mode-option input[type="radio"] {
+    display: none;
+}
+
+.mode-option label {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    color: var(--secondary-text);
+    font-weight: 500;
+}
+
+.mode-option input[type="radio"]:checked + label {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+#extract-options label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-text);
+}
+
+.text-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--primary-text);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.text-input::placeholder {
+    color: var(--secondary-text);
+    opacity: 0.5;
+}
+
+.text-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+.error-message {
+    color: #E57373; /* Soft red for errors */
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* --- PDF Preview Styles --- */
+.preview-container {
+    margin-top: 2rem;
+}
+
+.preview-container h3 {
+    margin-bottom: 1rem;
+}
+
+#preview-pages {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    max-height: 400px; /* Limit height and make it scrollable */
+    overflow-y: auto;
+}
+
+.preview-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preview-page canvas {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.page-number {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    margin-top: 0.5rem;
+}
+
+.loader {
+    border: 4px solid var(--surface-color);
+    border-radius: 50%;
+    border-top: 4px solid var(--accent-color);
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
