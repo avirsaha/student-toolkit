@@ -525,6 +525,7 @@ footer {
     margin-top: 1rem;
 }
 
+
 /* --- PDF Preview Styles --- */
 .preview-container {
     margin-top: 2rem;
@@ -578,6 +579,199 @@ footer {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* --- PDF Compressor Page Styles --- */
+.compress-options-container {
+    padding: 1.5rem;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.options-label {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--secondary-text);
+    font-weight: 500;
+}
+
+.compression-mode-selector {
+    display: flex;
+    gap: 0.5rem;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 0.25rem;
+    border: 1px solid var(--border-color);
+}
+
+.preview-section {
+    margin-top: 2rem;
+}
+
+.preview-section h4 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-text);
+}
+
+.preview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    text-align: center;
+}
+
+.preview-box h5 {
+    margin-bottom: 1rem;
+}
+
+.preview-box canvas {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.preview-box p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+/* --- Word Counter & Analyzer Page Styles --- */
+.analyzer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* 60% for text area, 40% for stats */
+    gap: 2rem;
+    height: 70vh; /* Make it take up a good portion of the viewport height */
+}
+
+.text-input-area {
+    display: flex;
+}
+
+#text-input {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--primary-text);
+    resize: none;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#text-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+.stats-dashboard {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    text-transform: uppercase;
+}
+
+.detail-stats {
+    margin-bottom: 2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+.detail-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.detail-label {
+    color: var(--secondary-text);
+}
+
+.detail-value {
+    font-weight: 500;
+    color: var(--primary-text);
+}
+
+.word-frequency h4 {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.word-frequency ul {
+    list-style: none;
+}
+
+.word-frequency li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.word-frequency li.placeholder {
+    color: var(--secondary-text);
+    font-style: italic;
+}
+
+.word-frequency .word {
+    font-weight: 500;
+}
+
+.word-frequency .count {
+    background-color: var(--bg-color);
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments for analyzer */
+@media (max-width: 900px) {
+    .analyzer-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    #text-input {
+        height: 40vh; /* Give it a fixed height on mobile */
+    }
 }
 
 

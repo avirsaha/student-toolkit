@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Splitter | Student Toolkit</title>
+    <title>Compress PDF | Student Toolkit</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +13,8 @@
     <header class="tool-header">
         <div class="container">
             <a href="../index.html" class="back-link">&larr; Back to All Tools</a>
-            <h1>PDF Splitter</h1>
-            <p class="subtitle">Extract pages or split a PDF into multiple files.</p>
+            <h1>Compress PDF</h1>
+            <p class="subtitle">Reduce the file size of your PDF while optimizing for quality.</p>
         </div>
     </header>
 
@@ -31,32 +31,43 @@
                 <input type="file" id="file-input" accept="application/pdf" hidden>
             </div>
 
-            <!-- Step 2: Splitting Options -->
-            <div id="split-options" class="split-options-container" hidden>
+            <!-- Step 2: Compression Options -->
+            <div id="compress-options" class="compress-options-container" hidden>
                 <div id="file-info-display" class="file-info"></div>
                 
-                 <div class="split-mode-selector">
+                <label class="options-label">Select Compression Level:</label>
+                <div class="compression-mode-selector">
                     <div class="mode-option">
-                        <input type="radio" id="mode-extract" name="split-mode" value="extract" checked>
-                        <label for="mode-extract">Extract Pages</label>
+                        <input type="radio" id="level-low" name="compress-level" value="0.5" checked>
+                        <label for="level-low">Recommended</label>
                     </div>
                     <div class="mode-option">
-                        <input type="radio" id="mode-split-all" name="split-mode" value="split-all">
-                        <label for="mode-split-all">Split Every Page</label>
+                        <input type="radio" id="level-medium" name="compress-level" value="0.3">
+                        <label for="level-medium">High Compression</label>
                     </div>
-                </div>
-
-                <div id="extract-options">
-                    <label for="page-ranges">Enter pages or ranges to extract:</label>
-                    <input type="text" id="page-ranges" class="text-input" placeholder="e.g., 1-5, 8, 10-12">
+                     <div class="mode-option">
+                        <input type="radio" id="level-high" name="compress-level" value="0.1">
+                        <label for="level-high">Extreme Compression</label>
+                    </div>
                 </div>
             </div>
             
             <!-- Step 3: Preview -->
-            <div id="preview-container" class="preview-container" hidden>
-                <h3>Document Preview</h3>
+            <div id="preview-section" class="preview-section" hidden>
+                <h4>First Page Quality Preview</h4>
                 <div id="preview-loader" class="loader"></div>
-                <div id="preview-pages"></div>
+                <div id="preview-content" class="preview-content" hidden>
+                    <div class="preview-box">
+                        <h5>Original</h5>
+                        <canvas id="preview-canvas-before"></canvas>
+                        <p id="original-size"></p>
+                    </div>
+                     <div class="preview-box">
+                        <h5>Compressed (Estimated)</h5>
+                        <canvas id="preview-canvas-after"></canvas>
+                        <p id="estimated-size"></p>
+                    </div>
+                </div>
             </div>
 
             <!-- Error Message -->
@@ -64,7 +75,7 @@
 
             <!-- Step 4: Action Button -->
             <div class="action-container">
-                <button id="split-btn" class="button-primary" disabled>Split PDF</button>
+                <button id="compress-btn" class="button-primary" disabled>Compress PDF</button>
             </div>
         </div>
     </main>
@@ -75,13 +86,10 @@
 
     <!-- Required Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jszip/dist/jszip.min.js"></script>
-    <!-- pdf.js for rendering previews (FIXED CDN LINK) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     
     <!-- Tool-specific script -->
-    <script src="../scripts/pdf-splitter.js"></script>
+    <script src="../scripts/pdf-compressor.js"></script>
 </body>
 </html>
-
 

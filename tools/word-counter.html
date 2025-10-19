@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter & Analyzer | Student Toolkit</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="tool-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">&larr; Back to All Tools</a>
+            <h1>Word Counter & Text Analyzer</h1>
+            <p class="subtitle">Get detailed insights into your writing beyond just word count.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="analyzer-container">
+            <!-- Left side: Text Input -->
+            <div class="text-input-area">
+                <textarea id="text-input" placeholder="Start typing or paste your text here..."></textarea>
+            </div>
+
+            <!-- Right side: Statistics Dashboard -->
+            <div class="stats-dashboard">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value" id="word-count">0</span>
+                        <span class="stat-label">Words</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="char-count">0</span>
+                        <span class="stat-label">Characters</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="sentence-count">0</span>
+                        <span class="stat-label">Sentences</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="paragraph-count">0</span>
+                        <span class="stat-label">Paragraphs</span>
+                    </div>
+                </div>
+
+                <div class="detail-stats">
+                    <div class="detail-stat">
+                        <span class="detail-label">Reading Time</span>
+                        <span class="detail-value" id="reading-time">~ 0 min</span>
+                    </div>
+                     <div class="detail-stat">
+                        <span class="detail-label">Speaking Time</span>
+                        <span class="detail-value" id="speaking-time">~ 0 min</span>
+                    </div>
+                    <div class="detail-stat">
+                        <span class="detail-label">Readability</span>
+                        <span class="detail-value" id="readability">~ Grade 0</span>
+                    </div>
+                    <div class="detail-stat">
+                        <span class="detail-label">Avg. Sentence Length</span>
+                        <span class="detail-value" id="avg-sentence-length">0 words</span>
+                    </div>
+                     <div class="detail-stat">
+                        <span class="detail-label">Longest Sentence</span>
+                        <span class="detail-value" id="longest-sentence">0 words</span>
+                    </div>
+                     <div class="detail-stat">
+                        <span class="detail-label">Unique Words</span>
+                        <span class="detail-value" id="unique-words">0</span>
+                    </div>
+                </div>
+
+                <div class="word-frequency">
+                    <h4>Top Keywords</h4>
+                    <ul id="keyword-list">
+                        <li class="placeholder">Your most used words will appear here...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Student Toolkit. Built with ❤️ by Aviraj Saha in Kolkata.</p>
+    </footer>
+
+    <script src="../scripts/word-counter.js"></script>
+</body>
+</html>
+
+
