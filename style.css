@@ -774,7 +774,6 @@ footer {
     }
 }
 
-
 /* --- Add Page Numbers Page Styles --- */
 .options-panel-container {
     width: 100%;
@@ -860,4 +859,132 @@ footer {
     }
 }
 
+/* --- Generic Tool Page Styles --- */
+.tool-header {
+    text-align: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 3rem;
+}
+
+.tool-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.back-link {
+    display: block;
+    max-width: fit-content;
+    margin: 0 auto 1.5rem auto;
+    color: var(--secondary-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--accent-color);
+}
+
+.tool-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.drop-zone {
+    width: 100%;
+    padding: 3rem;
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.drop-zone.drag-over {
+    border-color: var(--accent-color);
+    background-color: #2a2a2a;
+}
+
+.drop-zone-prompt svg {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.drop-zone-prompt p {
+    color: var(--secondary-text);
+}
+
+.drop-zone-prompt .small-text {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.action-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* --- Generic Form Styles --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--primary-text);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+/* --- Generic Button Styles --- */
+.button-primary {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button-primary:hover:not(:disabled) {
+    background-color: #3a80d2;
+}
+
+.button-secondary {
+    background-color: var(--surface-color);
+    color: var(--primary-text);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.button-secondary:hover {
+    background-color: #2a2a2a;
+    border-color: #555;
+}
 
