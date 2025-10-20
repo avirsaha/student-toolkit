@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Page Numbers | Student Toolkit</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="tool-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">&larr; Back to All Tools</a>
+            <h1>Add Page Numbers to PDF</h1>
+            <p class="subtitle">Easily insert page numbers into your PDF documents.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-container">
+            <!-- Step 1: File Input -->
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-prompt">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    <p>Drag & drop a single PDF file here</p>
+                    <p class="small-text">or</p>
+                    <button id="browse-btn" class="button-secondary">Browse File</button>
+                </div>
+                <input type="file" id="file-input" accept="application/pdf" hidden>
+            </div>
+
+            <!-- Step 2: Options Panel -->
+            <div id="options-panel" class="options-panel-container" hidden>
+                <div id="file-info-display" class="file-info"></div>
+                
+                <div class="options-grid">
+                    <!-- Position Selector -->
+                    <div class="form-group">
+                        <label class="options-label">Position</label>
+                        <div class="position-grid">
+                            <div class="grid-cell" data-position="top-left"></div>
+                            <div class="grid-cell" data-position="top-center"></div>
+                            <div class="grid-cell" data-position="top-right"></div>
+                            <div class="grid-cell" data-position="middle-left"></div>
+                            <div class="grid-cell" data-position="middle-center"></div>
+                            <div class="grid-cell" data-position="middle-right"></div>
+                            <div class="grid-cell" data-position="bottom-left"></div>
+                            <div class="grid-cell selected" data-position="bottom-center"></div>
+                            <div class="grid-cell" data-position="bottom-right"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Other Options -->
+                    <div class="sub-options">
+                         <div class="form-group">
+                            <label for="page-range-input" class="options-label">Pages to number</label>
+                            <input type="text" id="page-range-input" class="form-input" placeholder="e.g., all, 1-5, 8-10, 12">
+                        </div>
+                        <div class="form-group">
+                            <label for="format-select" class="options-label">Number format</label>
+                            <select id="format-select" class="form-input">
+                                <option value="{page}">1, 2, 3...</option>
+                                <option value="Page {page}">Page 1, Page 2...</option>
+                                <option value="{page} / {total}">1 / 10, 2 / 10...</option>
+                                <option value="Page {page} of {total}" selected>Page 1 of 10...</option>
+                            </select>
+                        </div>
+                        <div class="form-group-inline">
+                            <div class="form-group">
+                                <label for="font-size-input" class="options-label">Font Size</label>
+                                <input type="number" id="font-size-input" class="form-input" value="12">
+                            </div>
+                            <div class="form-group">
+                                 <label for="font-color-input" class="options-label">Color</label>
+                                <input type="color" id="font-color-input" class="form-color-input" value="#000000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Error Message -->
+            <p id="error-message" class="error-message" hidden></p>
+
+            <!-- Action Button -->
+            <div class="action-container">
+                <button id="add-numbers-btn" class="button-primary" disabled>Add Page Numbers</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Student Toolkit. All tools run in your browser for privacy and speed.</p>
+    </footer>
+
+    <!-- Required Library -->
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+
+    <!-- Tool-specific script -->
+    <script src="../scripts/add-page-numbers.js"></script>
+</body>
+</html>
+

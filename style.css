@@ -775,3 +775,89 @@ footer {
 }
 
 
+/* --- Add Page Numbers Page Styles --- */
+.options-panel-container {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.sub-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.position-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(3, 40px);
+    gap: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.grid-cell {
+    border: 2px dashed var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.grid-cell:hover {
+    background-color: #2a2a2a;
+    border-color: #555;
+}
+
+.grid-cell.selected {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.form-group-inline {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.form-color-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.form-color-input::-webkit-color-swatch {
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+.form-color-input::-moz-color-swatch {
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments for page number options */
+@media (max-width: 768px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        justify-items: center;
+    }
+}
+
+
