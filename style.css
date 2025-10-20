@@ -988,3 +988,335 @@ footer {
     border-color: #555;
 }
 
+
+/* --- Pomodoro Timer Page Styles --- */
+.pomodoro-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timer-card, .task-list-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.mode-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--secondary-text);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+    background-color: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+.timer-display-container {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress-ring-bg {
+    fill: none;
+    stroke: var(--bg-color);
+}
+
+.progress-ring-fg {
+    fill: none;
+    stroke: var(--accent-color);
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.5s linear;
+}
+
+.time-display {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-text);
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.timer-controls .button-primary {
+    width: 150px; /* Give the main button a fixed width */
+}
+
+.timer-controls .button-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 54px; /* Make it a square */
+    height: 54px;
+}
+
+.session-tracker {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--secondary-text);
+}
+
+.task-list-card h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.task-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.task-form button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 48px;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+}
+
+.task-form button:hover {
+    background-color: #3a80d2;
+}
+
+.task-list {
+    list-style: none;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.task-list li.completed .task-text {
+    text-decoration: line-through;
+    color: var(--secondary-text);
+}
+
+.task-list .task-checkbox {
+    margin-right: 1rem;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.task-list .task-text {
+    flex-grow: 1;
+}
+
+.task-list .delete-task-btn {
+    background: none;
+    border: none;
+    color: var(--secondary-text);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    opacity: 0.5;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.task-list li:hover .delete-task-btn {
+    opacity: 1;
+}
+.task-list .delete-task-btn:hover {
+    color: #E57373; /* Soft red */
+}
+
+/* Responsive adjustments for Pomodoro page */
+@media (max-width: 900px) {
+    .pomodoro-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* --- Markdown Preview Page Styles --- */
+.markdown-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    height: 75vh; /* Set a fixed height for the container */
+    padding-bottom: 2rem;
+}
+
+.markdown-panel {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Hide anything that spills out */
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--secondary-text);
+    text-transform: uppercase;
+}
+
+.panel-header .button-secondary {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+}
+
+#markdown-input {
+    flex-grow: 1;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--surface-color);
+    border: none;
+    color: var(--primary-text);
+    resize: none;
+    outline: none;
+}
+
+.preview-content {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+/* --- Rendered Markdown Styles --- */
+.preview-content h1,
+.preview-content h2,
+.preview-content h3,
+.preview-content h4,
+.preview-content h5,
+.preview-content h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.preview-content h1 { font-size: 2em; border-bottom: 1px solid var(--border-color); padding-bottom: .3em;}
+.preview-content h2 { font-size: 1.5em; border-bottom: 1px solid var(--border-color); padding-bottom: .3em;}
+.preview-content h3 { font-size: 1.25em; }
+.preview-content h4 { font-size: 1em; }
+
+.preview-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.preview-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+.preview-content a:hover {
+    text-decoration: underline;
+}
+
+.preview-content ul, .preview-content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.preview-content li {
+    margin-bottom: 0.5rem;
+}
+
+.preview-content blockquote {
+    margin: 0 0 1rem 0;
+    padding-left: 1rem;
+    border-left: 4px solid var(--border-color);
+    color: var(--secondary-text);
+}
+
+.preview-content code {
+    background-color: var(--bg-color);
+    padding: 0.2em 0.4em;
+    font-size: 85%;
+    border-radius: 6px;
+}
+
+.preview-content pre {
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+}
+
+.preview-content pre code {
+    padding: 0;
+    font-size: 100%;
+}
+
+.preview-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.preview-content th, .preview-content td {
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+}
+
+.preview-content th {
+    background-color: var(--bg-color);
+}
+
+/* Responsive adjustments for Markdown page */
+@media (max-width: 900px) {
+    .markdown-container {
+        grid-template-columns: 1fr;
+        height: auto; /* Let it grow on mobile */
+    }
+    #markdown-input, .preview-content {
+        height: 40vh; /* Give each panel a fixed height */
+    }
+}
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer | Student Toolkit</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="tool-header">
+        <div class="container">
+            <a href="../index.html" class="back-link">&larr; Back to All Tools</a>
+            <h1>Pomodoro Timer</h1>
+            <p class="subtitle">Stay focused and manage your study sessions effectively.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="pomodoro-container">
+            <!-- Timer Section -->
+            <div class="timer-card">
+                <div class="mode-selector">
+                    <button id="pomodoro-btn" class="mode-btn active" data-mode="pomodoro">Pomodoro</button>
+                    <button id="short-break-btn" class="mode-btn" data-mode="shortBreak">Short Break</button>
+                    <button id="long-break-btn" class="mode-btn" data-mode="longBreak">Long Break</button>
+                </div>
+
+                <div class="timer-display-container">
+                    <svg class="progress-ring" width="220" height="220">
+                        <circle class="progress-ring-bg" stroke-width="8" r="100" cx="110" cy="110" />
+                        <circle id="progress-ring-fg" class="progress-ring-fg" stroke-width="8" r="100" cx="110" cy="110" />
+                    </svg>
+                    <div id="time-display" class="time-display">25:00</div>
+                </div>
+
+                <div class="timer-controls">
+                    <button id="start-btn" class="button-primary">Start</button>
+                    <button id="reset-btn" class="button-secondary">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 2v6h6M2.66 15.57a10 10 0 1 0 .57-8.38"/></svg>
+                    </button>
+                </div>
+                 <div id="session-tracker" class="session-tracker"></div>
+            </div>
+
+            <!-- Task List Section -->
+            <div class="task-list-card">
+                <h3>Tasks for this Session</h3>
+                <form id="task-form" class="task-form">
+                    <input type="text" id="task-input" class="form-input" placeholder="Add a new task..." autocomplete="off">
+                    <button type="submit">+</button>
+                </form>
+                <ul id="task-list" class="task-list">
+                    <!-- Tasks will be added here by JS -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Student Toolkit. Built with ❤️ by Aviraj Saha in Kolkata.</p>
+    </footer>
+
+    <!-- Audio for alarm -->
+    <audio id="alarm-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-clear-announce-tones-2861.mp3" preload="auto"></audio>
+
+    <script src="../scripts/pomodoro-timer.js"></script>
+</body>
+</html>
+
